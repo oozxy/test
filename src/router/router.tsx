@@ -1,14 +1,18 @@
-
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Index from "@/views/index"
-import Technology from "@/views/technology"
+import * as React from 'react'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Index from "../views/index"
+import Technology from "../views/technology"
 import LifeVlog from "../views/lifeVlog"
-export const RouterCom = ()=>{
+import NotFound from "../views/notFound"
+export const RouterCom: React.SFC = () =>{
   return (
     <Router>
-      <Route path="/" component={Index}/>
-      <Route path="/technology" component={Technology}/>
-      <Route path="/lifeVlog" component={LifeVlog}/>
+      <Switch>
+        <Route exact path="/" component={Index}/>
+        <Route path="/technology" component={Technology}/>
+        <Route path="/lifeVlog" component={LifeVlog}/>
+        <Route component={NotFound}/>
+      </Switch>
     </Router>
   )
 }
