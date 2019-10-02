@@ -1,7 +1,7 @@
 import React from 'react';
-const Index: React.FC = () => {
+const Login: React.FC = () => {
   return (
-    <div className="home">首页 <span>123123</span>
+    <div className="home">登录 <span>123123</span>
       <div className="banner">
         <p className="title">
           <ul></ul>
@@ -10,4 +10,4 @@ const Index: React.FC = () => {
     </div>
   )
 }
-export default Index
+export default Login
