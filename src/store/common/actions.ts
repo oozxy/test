@@ -1,6 +1,8 @@
-import { Message } from './types'
-export function sendMessage(newMessage: Message){
-  return {
-    payload: newMessage
-  }
-}
+
+import { createAction } from 'redux-actions';
+import { Message } from './models'
+import { SET_VALUE } from "../types"
+export const setValue = createAction(
+  SET_VALUE,
+  (newMessage: Message) => ({newMessage})
+);
