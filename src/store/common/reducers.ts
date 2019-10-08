@@ -1,12 +1,20 @@
-import { handleActions, Action } from 'redux-actions';
-import { Message } from './models'
-import { setValue } from "./actions"
-import { SET_VALUE } from "../types"
-export const initialState:Message = {
-  user: "",
-  message: "",
-  timestamp: 0
+import { ChatState, SEND_MESSAGE, DELETE_MESSAGE, ChatActionTypes } from './models'
+const initialState: ChatState = {
+  messages: []
 }
-export default handleActions<Message,object>({
-  [SET_VALUE]: (state:Message, action:Action<>)
-})
+export function chatReducer(state = initialState,action:ChatActionTypes): ChatState{
+  switch (action.type) {
+    case SEND_MESSAGE:
+      return {
+        messages:[...state.messages,action.playload]
+      }
+    case DELETE_MESSAGE:
+      return {
+        messages: state.messages.filter(
+          message => message.timestamp !== action.meta.timestamp
+        )
+      }
+    default:
+      return state
+  }
+}
