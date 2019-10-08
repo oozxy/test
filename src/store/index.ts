@@ -2,7 +2,7 @@ import { systemReducer } from './lifeVlog/reducers'
 import { chatReducer } from './common/reducers'
 import { combineReducers } from 'redux'
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   system: systemReducer,
   chat: chatReducer
 })
