@@ -1,7 +1,10 @@
-import commonReducer from "./common/reducers";
-import lifeVlogReducer from "./lifeVlog/reducers";
-const rootReducer = {
-  commonReducer,
-  lifeVlogReducer
-}
-module.exports=rootReducer
+import { systemReducer } from './lifeVlog/reducers'
+import { chatReducer } from './common/reducers'
+import { combineReducers } from 'redux'
+
+const rootReducer = combineReducers({
+  system: systemReducer,
+  chat: chatReducer
+})
+
+export type AppState = ReturnType<typeof rootReducer>

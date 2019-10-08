@@ -2,6 +2,11 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.less';
 import { RouterCom } from "./router/router"
+import { AppState } from './store'
+const mapStateToProps = (state: AppState) => ({
+  system: state.system,
+  chat: state.chat
+})
 const App: React.FC = () => {
   return (
     <div className="App">
