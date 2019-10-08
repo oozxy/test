@@ -4,8 +4,16 @@ const Index: React.FC = () => {
     <div className="home">首页 <span>123123</span>
       <div className="banner">
         <p className="title">
-          <ul></ul>
         </p>
+      </div>
+      <ul>
+        <li>123</li>
+      </ul>
+      <input type="text" className="username"/>
+      <input type="text" className="username"/>
+      <div className="home_btn">
+        <span className="add_btn">添加信息</span>
+        <span className="delete_btn">删除信息</span>
       </div>
     </div>
   )

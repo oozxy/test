@@ -1,9 +1,13 @@
-export interface Message {
-  user: string
-  message: string
-  timestamp: number
+export interface SystemState {
+  loggedIn: boolean
+  session: string
+  userName: string
+}
+export const UPDATE_SESSION = 'UPDATE_SESSION'
+
+interface UpdateSessionAction {
+  type: typeof UPDATE_SESSION
+  payload: SystemState
 }
 
-export interface ChatState {
-  messages: Message[]
-}
+export type SystemActionTypes = UpdateSessionAction

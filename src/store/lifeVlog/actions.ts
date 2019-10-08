@@ -1,6 +1,8 @@
-import { Message} from './models'
-export function sendMessage(newMessage: Message){
+import { SystemState, UPDATE_SESSION, SystemActionTypes } from './models'
+
+export function updateSession(newSession: SystemState): SystemActionTypes {
   return {
-    payload: newMessage
+    type: UPDATE_SESSION,
+    payload: newSession
   }
 }
