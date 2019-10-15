@@ -1,9 +1,9 @@
 import React from "react";
-
+import { connect } from 'react-redux'
 export interface IHomePageState {
   name: string
 }
-class HomeComponent extends React.Component<{}, IHomePageState> {
+ class HomeComponent extends React.Component<{}, IHomePageState> {
   constructor(props: {}) {
     super(props);
     this.state = {
@@ -24,5 +24,10 @@ class HomeComponent extends React.Component<{}, IHomePageState> {
       </div>
     )
   }
-  
 }
+const messages = state => {
+  return {
+    messages: state.
+  }
+}
+export default connect(messages)(HomeComponent)
