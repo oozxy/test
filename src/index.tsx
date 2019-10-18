@@ -20,5 +20,6 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-//小邹今天没有打卡（10月10号）
-//心情不好，打个卡
+//小邹今天心情不好，打个卡
+//小邹今天心情还是不好，打个卡
+//小邹今天心情又不好，打个卡
