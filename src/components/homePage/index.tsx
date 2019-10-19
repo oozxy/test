@@ -1,13 +1,16 @@
 import React from "react";
 import { connect } from 'react-redux'
+export interface IHomePageProps {
+  name: string
+}
 export interface IHomePageState {
   name: string
 }
- class HomeComponent extends React.Component<{}, IHomePageState> {
-  constructor(props: {}) {
+ class HomeComponent extends React.Component<IHomePageProps,IHomePageState> {
+  constructor(props: IHomePageProps) {
     super(props);
     this.state = {
-      name: "",
+      name: props.name
     };
   }
   public setName = () => {
@@ -16,6 +19,7 @@ export interface IHomePageState {
     })
   }
   public render(){
+    console.log(this.state)
     const { name } = this.state;
     return (
       <div>
@@ -25,9 +29,4 @@ export interface IHomePageState {
     )
   }
 }
-const messages = state => {
-  return {
-    messages: state.
-  }
-}
-export default connect(messages)(HomeComponent)
+export default HomeComponent
