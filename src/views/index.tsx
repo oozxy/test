@@ -1,5 +1,6 @@
 import React from 'react';
 import HomePage from "../components/homePage/index";
+
 const Index: React.FC = () => {
   return (
     <div className="home">首页 <span>123123</span>
@@ -20,4 +21,5 @@ const Index: React.FC = () => {
     </div>
   )
 }
+
 export default Index
