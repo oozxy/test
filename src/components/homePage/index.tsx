@@ -15,7 +15,7 @@ export interface IHomePageState {
   }
   public setName = () => {
     this.setState({
-      name:"polly"
+      name:"polly111"
     })
   }
   public render(){
