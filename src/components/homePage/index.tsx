@@ -1,5 +1,8 @@
 import React from "react";
 import { connect } from 'react-redux'
+import { bindActionCreators, Dispatch } from "redux";
+import { Message } from "../../store/common/models"
+import { sendMessage, deleteMessage} from "../../store/common/actions"
 export interface IHomePageProps {
   name: string
 }
@@ -29,4 +32,17 @@ export interface IHomePageState {
     )
   }
 }
-export default HomeComponent
+const mapStateToProps = (state: any, ownProps: IHomePageProps)=>{
+  console.log(state.chat.messages)
+  return {
+    name: ownProps.name,
+    messages: state.chat.messages
+  }
+}
+const mapDispatchToProps = (dispatch: Dispatch) =>{
+  return {
+    delete:bindActionCreators(deleteMessage,dispatch),
+    send:bindActionCreators(sendMessage,dispatch)
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(HomeComponent);
