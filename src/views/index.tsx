@@ -10,6 +10,7 @@ const Index: React.FC = () => {
       <ul>
         <li>123</li>
       </ul>
+      <HomePage name="alan"></HomePage>
       <input type="text" className="username"/>
       <input type="text" className="username"/>
       <div className="home_btn">
