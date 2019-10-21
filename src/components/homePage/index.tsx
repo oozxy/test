@@ -3,11 +3,13 @@ import { connect } from 'react-redux'
 import { bindActionCreators, Dispatch } from "redux";
 import { Message } from "../../store/common/models"
 import { sendMessage, deleteMessage} from "../../store/common/actions"
-export interface IHomePageProps {
+interface IHomePageProps {
   name: string,
-  messages: Message[]
+  messages: Message[],
+  send: typeof sendMessage,
+  delete: typeof deleteMessage
 }
-export interface IHomePageState {
+interface IHomePageState {
   name: string,
   userName: string,
   message: string
@@ -28,6 +30,7 @@ export interface IHomePageState {
   }
   handleUserChange(e: React.ChangeEvent<HTMLInputElement>) {
     this.setState({userName:e.target.value});
+    // this.setState("userName",e.target.value)
   }
   handleMsgChange(e: React.ChangeEvent<HTMLInputElement>) {
     this.setState({message:e.target.value});
@@ -39,10 +42,11 @@ export interface IHomePageState {
       message:this.state.message,
       timestamp:timestamp
     }
-    this.props.send()
+    this.props.send(playLoad)
   }
   handlDeleteClick(){
-
+    const timestamp:number = 1;
+    this.props.delete(timestamp);
   }
   public render(){
     const { name } = this.state;
@@ -58,11 +62,11 @@ export interface IHomePageState {
             )
           })}
          </ul>
-        <input type="text" className="username" value={this.state.userName} onChange={this.handleUserChange} placeholder="请输入用户名"/>
-        <input type="text" className="message" value={this.state.message} onChange={this.handleMsgChange} placeholder="请输入内容"/>
+        <input type="text" className="username" value={this.state.userName} onChange={this.handleUserChange.bind(this)} placeholder="请输入用户名"/>
+        <input type="text" className="message" value={this.state.message} onChange={this.handleMsgChange.bind(this)} placeholder="请输入内容"/>
         <div className="home_btn">
-          <span className="add_btn" onClick={this.handleAddClick}>添加信息</span>
-          <span className="delete_btn" onClick={this.handlDeleteClick}>删除信息</span>
+          <span className="add_btn" onClick={this.handleAddClick.bind(this)}>添加信息</span>
+          <span className="delete_btn" onClick={this.handlDeleteClick.bind(this)}>删除信息</span>
         </div>
       </div>
     )
@@ -77,6 +81,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>{
   return {
     delete:bindActionCreators(deleteMessage,dispatch),
     send:bindActionCreators(sendMessage,dispatch)
+    // send:(message:Message)=>dispatch(sendMessage(message))
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(HomeComponent as React.ComponentType<IHomePageProps>);
