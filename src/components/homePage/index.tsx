@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from 'react-redux'
 import { bindActionCreators, Dispatch } from "redux";
-import { Message } from "../../store/common/models"
+import { Message, ChatState } from "../../store/common/models"
 import { sendMessage, deleteMessage} from "../../store/common/actions"
 export interface IHomePageProps {
-  name: string
+  name: string,
+  messages: Message[]
 }
 export interface IHomePageState {
   name: string
@@ -22,20 +23,25 @@ export interface IHomePageState {
     })
   }
   public render(){
-    console.log(this.state)
     const { name } = this.state;
+    const { messages } = this.props
     return (
       <div>
          <div onClick={this.setName}> set name </div>
          <div>{name}</div>
+         <ul>
+          {messages.map((val,index) => {
+            return (
+              <li key={index}>{val.message} {val.user}</li>
+            )
+          })}
+         </ul>
       </div>
     )
   }
 }
-const mapStateToProps = (state: any, ownProps: IHomePageProps)=>{
-  console.log(state.chat.messages)
+const mapStateToProps = (state: any)=>{
   return {
-    name: ownProps.name,
     messages: state.chat.messages
   }
 }
@@ -45,4 +51,4 @@ const mapDispatchToProps = (dispatch: Dispatch) =>{
     send:bindActionCreators(sendMessage,dispatch)
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(HomeComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeComponent as React.ComponentType<IHomePageProps>);
