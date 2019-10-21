@@ -1,26 +1,48 @@
 import React from "react";
 import { connect } from 'react-redux'
 import { bindActionCreators, Dispatch } from "redux";
-import { Message, ChatState } from "../../store/common/models"
+import { Message } from "../../store/common/models"
 import { sendMessage, deleteMessage} from "../../store/common/actions"
 export interface IHomePageProps {
   name: string,
   messages: Message[]
 }
 export interface IHomePageState {
-  name: string
+  name: string,
+  userName: string,
+  message: string
 }
  class HomeComponent extends React.Component<IHomePageProps,IHomePageState> {
   constructor(props: IHomePageProps) {
     super(props);
     this.state = {
-      name: props.name
+      name: props.name,
+      userName: "",
+      message: ""
     };
   }
   public setName = () => {
     this.setState({
       name:"polly111"
     })
+  }
+  handleUserChange(e: React.ChangeEvent<HTMLInputElement>) {
+    this.setState({userName:e.target.value});
+  }
+  handleMsgChange(e: React.ChangeEvent<HTMLInputElement>) {
+    this.setState({message:e.target.value});
+  }
+  handleAddClick(){
+    const timestamp:number = (new Date()).getTime();
+    const playLoad:Message = {
+      user:this.state.userName,
+      message:this.state.message,
+      timestamp:timestamp
+    }
+    this.props.send()
+  }
+  handlDeleteClick(){
+
   }
   public render(){
     const { name } = this.state;
@@ -36,6 +58,12 @@ export interface IHomePageState {
             )
           })}
          </ul>
+        <input type="text" className="username" value={this.state.userName} onChange={this.handleUserChange} placeholder="请输入用户名"/>
+        <input type="text" className="message" value={this.state.message} onChange={this.handleMsgChange} placeholder="请输入内容"/>
+        <div className="home_btn">
+          <span className="add_btn" onClick={this.handleAddClick}>添加信息</span>
+          <span className="delete_btn" onClick={this.handlDeleteClick}>删除信息</span>
+        </div>
       </div>
     )
   }
