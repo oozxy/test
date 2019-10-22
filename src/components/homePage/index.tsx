@@ -68,6 +68,7 @@ interface IHomePageState {
           <span className="add_btn" onClick={this.handleAddClick.bind(this)}>添加信息</span>
           <span className="delete_btn" onClick={this.handlDeleteClick.bind(this)}>删除信息</span>
         </div>
+        <div className="info_btn">获取异步信息</div>
       </div>
     )
   }
