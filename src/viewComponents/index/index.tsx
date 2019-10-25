@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../commComponents/header"
+import "./index.less"
 interface IndexComProps {
 
 }
@@ -21,3 +22,4 @@ class IndexCom extends React.Component<IndexComProps>{
     )
   }
 }
+export default IndexCom
