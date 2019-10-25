@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Store, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { rootReducer } from './store'
-import './index.css';
+import './assets/css/basic.less';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 const initialState = {};
