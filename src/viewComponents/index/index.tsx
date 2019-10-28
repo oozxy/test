@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../commComponents/header"
+import Trans3D from "../../commComponents/animation"
 import "./index.less"
 interface IndexComProps {
 
@@ -16,7 +17,7 @@ class IndexCom extends React.Component<IndexComProps>{
           <div className="index_mask"></div>
         </div>
         <div className="index_content">
-
+          <Trans3D />
         </div>
       </div>
     )
