@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.less";
 interface HeaderProps {
   name:string
 }
@@ -25,6 +26,7 @@ class Header extends React.Component<HeaderProps,HeaderState>{
         <div className="header_right">
           <ul>
             <li><span className="header_login_btn">SIGN IN</span></li>
+            <li><span className="header_register_btn">SIGN UP</span></li>
           </ul>
         </div>
       </div>
