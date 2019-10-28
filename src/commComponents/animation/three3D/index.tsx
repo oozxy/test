@@ -1,5 +1,6 @@
 import React from "react";
-import "./index.less"
+import Three from "three";
+import "./index.less";
 interface Three3DProps {
 }
 interface Three3DState {
@@ -7,6 +8,9 @@ interface Three3DState {
 class Three3D extends React.Component<Three3DProps,Three3DState>{
   constructor(props:Three3DProps){
     super(props);
+  }
+  initThree(){
+    
   }
   public render(){
     return (
