@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../commComponents/header"
-import Trans3D from "../../commComponents/animation"
+import Trans3D from "../../commComponents/animation/periodic3D"
 import "./index.less"
 interface IndexComProps {
 
