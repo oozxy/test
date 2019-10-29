@@ -2,15 +2,20 @@ import React from "react";
 import * as THREE from "three";
 import "./index.less";
 interface Three3DProps {}
-interface Three3DState {}
+interface Three3DState {
+  testDom: any;
+}
 class Three3D extends React.Component<Three3DProps, Three3DState> {
   constructor(props: Three3DProps) {
     super(props);
+    this.state = {
+      testDom: ""
+    };
   }
   initThree() {
     // 获取浏览器窗口的宽高，后续会用
-    var width = window.innerWidth;
-    var height = window.innerHeight;
+    var width = 200;
+    var height = 200;
     // 创建一个场景
     let scene = new THREE.Scene();
     // 创建一个具有透视效果的摄像头
@@ -37,24 +42,21 @@ class Three3D extends React.Component<Three3DProps, Three3DState> {
     cube.position.x = 0;
     cube.position.y = -2;
     cube.position.z = 0;
-
     // 将立方体网格加入到场景中
     scene.add(cube);
-
     // 设置摄像机位置，并将其朝向场景中心(0, 0, 0)
     camera.position.x = 10;
     camera.position.y = 10;
-    camera.position.z = 30;
+    camera.position.z = 20;
     camera.lookAt(scene.position);
-
     // 将渲染器的输出（此处是 canvas 元素）插入到 body
     document.body.appendChild(renderer.domElement);
-
     // 渲染，即摄像头拍下此刻的场景
     renderer.render(scene, camera);
-    document.body.appendChild(renderer.domElement);
   }
-
+  animate(){
+    
+  }
   componentDidMount() {
     this.initThree();
   }
