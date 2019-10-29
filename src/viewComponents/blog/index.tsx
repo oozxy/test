@@ -6,9 +6,9 @@ interface BlogComProps {
 
 }
 class BlogCom extends React.Component<BlogComProps>{
-  constructor(props:BlogComProps){
-    super(props);
-  }
+  // constructor(props:BlogComProps){
+  //   super(props);
+  // }
   public render(){
     return (
       <div className="blog_main">
