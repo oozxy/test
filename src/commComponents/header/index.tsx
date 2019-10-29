@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.less";
+import { Link } from 'react-router-dom';
 interface HeaderProps {
   name:string
 }
@@ -16,11 +17,11 @@ class Header extends React.Component<HeaderProps,HeaderState>{
         <div className="header_logo"></div>
         <div className="header_left">
           <ul>
-            <li>HOME</li>
-            <li>BLOG</li>
-            <li>RESUME</li>
-            <li>MOMENTS</li>
-            <li>OTHER</li>
+            <li><Link to="/">HOME</Link></li>
+            <li><Link to="/blog">BLOG</Link></li>
+            <li><Link to="/blog">RESUME</Link></li>
+            <li><Link to="/moments">MOMENTS</Link></li>
+            <li><Link to="/moments">OTHER</Link></li>
           </ul>
         </div>
         <div className="header_right">
