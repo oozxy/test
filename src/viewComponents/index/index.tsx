@@ -6,9 +6,9 @@ interface IndexComProps {
 
 }
 class IndexCom extends React.Component<IndexComProps>{
-  constructor(props:IndexComProps){
-    super(props);
-  }
+  // constructor(props:IndexComProps){
+  //   super(props);
+  // }
   public render(){
     return (
       <div className="index_main">
