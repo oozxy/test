@@ -78,7 +78,8 @@ class Three3D extends React.Component<Three3DProps, Three3DState> {
     // animate();
   }
   componentDidMount() {
-    this.test();
+    // this.test();
+    this.initThree();
   }
   public render() {
     return <div className="three3D_main"></div>;
