@@ -17,7 +17,7 @@ class IndexCom extends React.Component<IndexComProps>{
           <div className="index_mask"></div>
         </div>
         <div className="index_content top_padding">
-          <Trans3D />
+          {/* <Trans3D /> */}
         </div>
       </div>
     )
