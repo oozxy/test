@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "../../commComponents/header"
-import Trans3D from "../../commComponents/animation/periodic3D"
 import "./index.less"
 interface IndexComProps {
 
@@ -12,12 +10,18 @@ class IndexCom extends React.Component<IndexComProps>{
   public render(){
     return (
       <div className="index_main">
-        <Header name="polly"></Header>
-        <div className="index_bg">
-          <div className="index_mask"></div>
-        </div>
-        <div className="index_content top_padding">
-          {/* <Trans3D /> */}
+        <div className="index_bg"></div>
+        <div className="index_wrap">
+          <div className="index_logo">
+            <img src="https://www.grannyssecret.com/web-assets/img/design/grannys-logo-vertical.png" alt=""/>
+          </div>
+          <div className="index_menu">
+            <span className="menu_icon"></span>
+            <span className="menu_title">MENU</span>
+          </div>
+          <div className="index_content">
+            <span className="">welcome to polly's home</span>
+          </div>
         </div>
       </div>
     )

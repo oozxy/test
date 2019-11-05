@@ -1,5 +1,6 @@
 .index_main{
   .index_bg{
+    z-index: -1;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -12,6 +13,23 @@
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, .5);
+    }
+  }
+  .index_wrap{
+    .index_logo{
+      width: 150px;
+      img{
+        display: block;
+        width: 100%;
+      }
+    }
+    .index_menu{
+      border-radius: 20px;
+      border: 2px solid #fff;
+      line-height: 40px;
+      color: #fff;
+      font-size: 20px;
+      margin: 50px;
     }
   }
 }
