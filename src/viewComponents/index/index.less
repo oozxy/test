@@ -27,12 +27,45 @@
       }
     }
     .index_menu{
-      border-radius: 20px;
+      width:94px;
+      border-radius: 25px;
       border: 2px solid #fff;
       line-height: 40px;
       color: #fff;
-      font-size: 20px;
-      margin: 50px;
+      font-size: 12px;
+      margin: auto;
+      margin-top: 40px;
+      .menu_icon{
+        width: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        margin-right: 10px;
+        transition: all .3s;
+        top: -1px;
+        background: #fff;
+        height: 2px;
+        &::before{
+          content: "";
+          position: absolute;
+          width: 15px;
+          height: 2px;
+          background: #fff;
+          left: 0;
+          top: -5px;
+          transition: all .3s;
+        }
+        &::after{
+          content: "";
+          position: absolute;
+          width: 15px;
+          height: 2px;
+          background: #fff;
+          left: 0;
+          top: 5px;
+          transition: all .3s;
+        }
+      }
     }
   }
 }
