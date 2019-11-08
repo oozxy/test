@@ -10,7 +10,9 @@ class IndexCom extends React.Component<IndexComProps>{
   public render(){
     return (
       <div className="index_main">
-        <div className="index_bg"></div>
+        <div className="index_bg">
+          <div className="index_mask"></div>
+        </div>
         <div className="index_wrap">
           <div className="index_header">
             <div className="index_logo">
