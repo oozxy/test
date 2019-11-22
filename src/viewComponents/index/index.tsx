@@ -24,7 +24,11 @@ class IndexCom extends React.Component<IndexComProps>{
             </div>
           </div>        
           <div className="index_content">
-            <span className="">welcome to polly's home</span>
+            <span className="bigTitle">Shall we</span>
+            <span className="bigSubtitle">share the secret with you?</span>     
+            <div className="svg_box">
+              
+            </div>       
           </div>
         </div>
       </div>

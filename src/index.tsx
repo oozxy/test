@@ -4,6 +4,7 @@ import { Store, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { rootReducer } from './store'
 import './assets/css/basic.less';
+import './assets/css/font.less';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 const initialState = {};
